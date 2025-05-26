@@ -1,0 +1,43 @@
+.header {
+  overflow: hidden;
+  margin: 20px 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffff;
+
+  &__logo {
+    font-size: 60px;
+
+    @media (max-width: 430px) {
+      font-size: 30px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    text-decoration: none;
+    list-style: none; 
+  }
+
+  &__linkLogo {
+    height: 40px;
+    width: 40px;
+    color: #ffff;
+
+    @media (max-width: 430px) {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    margin: 10px 40px;
+    align-items: center;
+  }
+}

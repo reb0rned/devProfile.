@@ -1,0 +1,140 @@
+@use '../../styles/variables.scss' as vars;
+
+.welcome {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 45px;
+
+  @media (min-width: vars.$breakpoint-tablet) {
+    flex-direction: row;
+    padding-top: 45px;
+  }
+
+  &__leftside {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 32px;
+
+    @media (min-width: vars.$breakpoint-mobile-sm) {
+      font-size: 40px;
+    }
+
+    @media (min-width: vars.$breakpoint-tablet) {
+      width: 50vw;
+      min-height: auto;
+      padding-top: 55px;
+      font-size: 50px;
+    }
+
+    &-aqua {
+      color: aqua;
+    }
+  }
+
+  &__container {
+    position: relative;
+    width: 100vw;
+    min-height: 500px;
+    padding: 15px;
+    background-color: aqua;
+    color: white;
+    border-radius: 10%;
+    overflow: hidden;
+    margin-top: 20px;
+
+    @media (min-width: vars.$breakpoint-mobile-sm) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    @media (min-width: vars.$breakpoint-tablet) {
+      width: 50vw;
+      height: 100%;
+      max-height: 900px;
+      padding: 15px 0 15px 15px;
+      margin-top: 0;
+      border-top-left-radius: 10%;
+      border-bottom-left-radius: 10%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &__info {
+      border-top-left-radius: 10%;
+      border-bottom-left-radius: 10%;
+      border-radius: 10%;
+
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+
+      @media (min-width: vars.$breakpoint-mobile-sm) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &-innerBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 300px;
+        width: 100%;
+
+        @media (min-width: vars.$breakpoint-mobile-sm) {
+          gap: 30px;
+          max-width: 400px;
+        }
+      }
+    }
+
+    &__infoPhoto {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-image: url('/photo.jpg');
+      background-size: cover;
+      background-position: center;
+
+      @media (min-width: vars.$breakpoint-mobile-sm) {
+        width: 250px;
+        height: 250px;
+      }
+
+      @media (min-width: vars.$breakpoint-tablet) {
+        width: 400px;
+        height: 400px;
+      }
+    }
+
+    &__infoName {
+      font-size: 32px;
+      margin: 0;
+      text-align: center;
+
+      @media (min-width: vars.$breakpoint-mobile-sm) {
+        font-size: 40px;
+      }
+    }
+
+    &__infoPostition {
+      font-size: 16px;
+      margin: 0;
+      text-align: center;
+
+      @media (min-width: vars.$breakpoint-mobile-sm) {
+        font-size: 18px;
+      }
+    }
+  }
+}
