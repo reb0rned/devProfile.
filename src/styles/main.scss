@@ -5,15 +5,19 @@ body {
 }
 
 
-
 * {
   margin: 0;
   padding: 0;
-  background-color: vars.$bg-color;
-  color: #ffff;
-  font-family: 'Inter', 'Special Gothic Expanded One', sans-serif;
+  color: inherit;
+  font-family: inherit;
   font-weight: 900;
   box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', 'Special Gothic Expanded One', sans-serif;
+  background-color: vars.$bg-color;
+  color: #fff;
+  overflow-x: hidden;
 }
 ::selection {
   background: aqua;
