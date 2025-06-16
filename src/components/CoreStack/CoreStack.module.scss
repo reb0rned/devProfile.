@@ -1,0 +1,90 @@
+@use "sass:color";
+@use '../../styles/variables.scss' as vars;
+
+.wrapper {
+  padding: 3rem 2rem;
+  background-color: vars.$bg-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: vars.$text-color;
+
+  padding-top: 200px;
+
+  @media (max-width: vars.$breakpoint-mobile-sm) {
+    padding-top: 80px;
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: vars.$accent-color;
+  text-shadow: 0 0 8px vars.$accent-color;
+  font-weight: 700;
+  text-align: center;
+}
+
+.stackGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+
+  @media (max-width: vars.$breakpoint-tablet) {
+    gap: 1.5rem;
+  }
+}
+
+.card {
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+
+  h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.4rem;
+    color: vars.$accent-color;
+    text-shadow: 0 0 6px vars.$accent-color;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: color.adjust(vars.$text-color, $lightness: 40%);
+  }
+}
+
+.iconWrapper {
+  width: 72px;
+  height: 72px;
+  color: vars.$accent-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 4px vars.$accent-color);
+  transition: color 0.3s ease, filter 0.3s ease;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  .card:hover & {
+    color: color.adjust(vars.$accent-color, $lightness: 15%);
+    filter: drop-shadow(0 0 8px color.adjust(vars.$accent-color, $lightness: 15%));
+  }
+}

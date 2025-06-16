@@ -1,4 +1,3 @@
-"use client";
 import styles from "./Summary.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -17,14 +16,24 @@ export const Summary = () => {
     offset: ["start end", "end end"],
   });
 
+  const progressOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.8, 0.81],
+    [1, 1, 0]
+  );
+  const progressScaleY = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
+
   return (
     <section ref={containerRef} className={styles.wrapper}>
-      <div className={styles.progress}>
+      <motion.div
+        className={styles.progress}
+        style={{ opacity: progressOpacity }}
+      >
         <motion.div
-          style={{ scaleY: scrollYProgress }}
+          style={{ scaleY: progressScaleY }}
           className={styles.progressBar}
         />
-      </div>
+      </motion.div>
 
       <div className={styles.content}>
         {summaryText.map((text, i) => {

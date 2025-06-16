@@ -18,7 +18,7 @@ export const Welcome = () => {
             <div className="welcome__container__infoPhoto"></div>
             <h2 className="welcome__container__infoName">Dmytro Kashchenko</h2>
             <h5 className="welcome__container__infoPostition">
-              🚀 Full Stack Developer | Frontend Enthusiast
+              💻 Full Stack Developer | 🧠 Lifelong learner
             </h5>
           </div>
         </div>
